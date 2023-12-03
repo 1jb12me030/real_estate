@@ -1,0 +1,18 @@
+
+
+<!-- property_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Property List</title>
+</head>
+<body>
+    <h1>Property List</h1>
+    <ul>
+        {% for property in properties %}
+            <li>{{ property.name }} - {{ property.location }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

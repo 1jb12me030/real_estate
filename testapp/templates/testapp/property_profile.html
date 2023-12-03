@@ -1,0 +1,19 @@
+<!-- property_profile.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ property.name }} Profile</title>
+</head>
+<body>
+    <h1>{{ property.name }} Profile</h1>
+    <p>Location: {{ property.location }}</p>
+
+    <h2>Units</h2>
+    <ul>
+        {% for unit_info in unit_tenant_info %}
+            <li>{{ unit_info.unit.unit_type }} - {% if unit_info.tenant %}{{ unit_info.tenant.user.email }}{% else %}No Tenant Assigned{% endif %}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,22 @@
+
+<!-- tenant_profile.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ tenant.user.email }} Profile</title>
+</head>
+<body>
+    <h1>{{ tenant.user.email }} Profile</h1>
+    <p>Address: {{ tenant.address }}</p>
+
+    <h2>Rental Information</h2>
+    {% if rental_info %}
+        <p>Unit: {{ rental_info.unit.property.name }} - {{ rental_info.unit.unit_type }}</p>
+        <p>Agreement End Date: {{ rental_info.agreement_end_date }}</p>
+        <p>Monthly Rent Date: {{ rental_info.monthly_rent_date }}</p>
+    {% else %}
+        <p>No rental information available for this tenant.</p>
+    {% endif %}
+</body>
+</html>
